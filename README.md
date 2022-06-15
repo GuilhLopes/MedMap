@@ -11,9 +11,13 @@ A nossa ideia principal é fazer um aplicativo e um site para uma melhor intera�
 Autores: 
 
 Gerente do Projeto: [📢@GuilhLopes](https://github.com/GuilhLopes) 
+
 Developer: [💻@GbrielZanoni](https://github.com/GbrielZanoni)
+
 Developer: [💻@AugustoPozza](https://github.com/AugustoPozza)
+
 Developer: [💻@Fabrizio Borghesi](https://github.com/FabrizioBorghesi)
+
 Developer: [💻@Thiago Prado Marçal](https://github.com/ThiagoPradouni)
 
 #  🗺️Roadmap🗺️
