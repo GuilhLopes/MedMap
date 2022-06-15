@@ -1,4 +1,4 @@
-#  Games hub
+#  🕹️GamesHub🕹️
 
 
 ![LOGO](https://cdn.discordapp.com/attachments/986763082992877588/986763122176036904/GamesHub.png)
@@ -12,3 +12,6 @@ Autores:
 
 Gerente do Projeto: [@GuilhLopes](https://github.com/GuilhLopes) 
 Developer: [@GbrielZanoni](https://github.com/GbrielZanoni)
+
+#  🗺️Roadmap🗺️
+
