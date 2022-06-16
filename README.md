@@ -25,3 +25,9 @@ Developer: [💻@Thiago Prado Marçal](https://github.com/ThiagoPradouni)
 
 ### ~~Criação do Site~~
 
+Prototipagem do aplicativo:
+
+[Imagem](https://cdn.discordapp.com/attachments/979147541721518142/986782838772863037/unknown.png)
+
+[Imagem](https://cdn.discordapp.com/attachments/979147541721518142/986783343154720798/unknown.png)
+
