@@ -1,35 +1,84 @@
 <ion-content [fullscreen]="true">
   <div id="posicionamento">
+
     <ion-grid>
       <ion-row>
-        <ion-col size="9">
+
+        <ion-col size="6">
           <ion-item>
-            <ion-input placeholder="Nome de um produto" [(ngModel)]="texto"></ion-input>
-           
+            <ion-input Placeholder="Produto" [(ngModel)]="texto" ></ion-input>
           </ion-item>
         </ion-col>
+
         <ion-col size="3">
-          <ion-button color="primary" size="small" (click)="adiciona()">
+          <ion-item>
+            <ion-input Placeholder="Valor" [(ngModel)]="valor"></ion-input>
+          </ion-item>
+        </ion-col>
+        
+        <ion_col size="3">
+
+          <ion-button size="small" (click)="Salvar()">
             <ion-icon name="save-outline"></ion-icon>
           </ion-button>
-        </ion-col>
+
+        </ion_col>
+
+
       </ion-row>
+      
+      <ion-row>
+
+        <ion-col>
+          <ion-item *ngFor = "let produto of variavel_lista; index as i">
+
+            <ion-grid>
+
+              <ion-row>
+
+                <ion-col size="6">
+                  {{produto}} 
+                </ion-col>
+
+                <ion-col size="3">
+                  
+                    {{variavel_valor[i]}}
+
+                  
+                </ion-col>
+
+                <ion-col size="3">
+                  <ion-button size="small" color="danger" (click)="Remover(i)">
+                  <ion-icon name="trash-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+
+              </ion-row>
+
+            </ion-grid>
+           
+          </ion-item>
+
+          
+      
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+  <div id="soma">
+    <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-item *ngFor = "let elemento_da_lista of variavel_lista">
-            {{elemento_da_lista}}
-            <ion-button color="danger" size="small" >
-              <ion-icon name="trash-outline"></ion-icon>
-            </ion-button>
+          <ion-item >
+          Essa é a soma dos produtos: {{soma}}
           </ion-item>
         </ion-col>
       </ion-row>
     </ion-grid>
+  
+  </div>
 
-  </div>  
 </ion-content>
-SCSS:
-#posicionamento {
-  padding-top: 20%;
-  padding-left: 10%;
-}
