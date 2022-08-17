@@ -4,6 +4,13 @@
 }
 
 #soma{
-  position: relative;
+  display: block;
+  position: fixed;
   padding-top: 100%;
+  padding-left: 40%
 }
+
+#valor{
+  color: yellow;
+}
+

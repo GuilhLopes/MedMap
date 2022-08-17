@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+
 
 @Component({
   selector: 'app-home',
@@ -7,31 +9,57 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private storage:Storage) {
+    this.storage.create();
+  }
 
-  variavel_lista = [];
+  ngOnInit(){
+    this.atualizaLista();
+  }
+
+  variavel_lista = [[]];
   variavel_valor = [];
   texto: string = "";
   valor: string = "";
   soma: string = "0";
+  aux = 0;
 
-  Salvar(){
+  async Salvar(){
     let Numero = parseInt(this.valor);
     let adicao = parseInt(this.soma);
     
     
     if(!(this.texto == "")){
-      this.variavel_lista.push(this.texto);
+
+      this.variavel_lista.forEach(item => {
+        if(parseInt(item[0]) > this.aux){
+          this.aux = parseInt(item[0]);
+        }
+      })
+
+      this.aux = this.aux + 1;
+
+      await this.storage.set(this.aux.toString(), this.texto);
+      this.atualizaLista();
+      this.texto = "";
       
     }
 
     if(!(this.valor == "")){
       this.variavel_valor.push(this.valor);
+      
       this.soma = (Numero + adicao).toString();
     }
     this.valor = "";
-    this.texto = "";
+    
 
+  }
+
+  atualizaLista(){
+    this.variavel_lista = [];
+    this.storage.forEach((valor, key, index ) =>{
+    this.variavel_lista.push([key,valor])
+  })
   }
 
   Remover(indice){
