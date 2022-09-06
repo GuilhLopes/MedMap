@@ -18,15 +18,14 @@ export class HomePage {
   }
 
   variavel_lista = [[]];
-  variavel_valor = [];
   texto: string = "";
   valor: string = "";
-  soma: string = "0";
+  soma: number = 0;
   aux = 0;
 
   async Salvar(){
     let Numero = parseInt(this.valor);
-    let adicao = parseInt(this.soma);
+    
     
     
     if(!(this.texto == "")){
@@ -37,21 +36,17 @@ export class HomePage {
         }
       })
 
+      
+
       this.aux = this.aux + 1;
 
-      await this.storage.set(this.aux.toString(), this.texto);
+      await this.storage.set(this.aux.toString(), [this.texto, this.valor] );
       this.atualizaLista();
+      this.soma = this.soma + Numero;
       this.texto = "";
-      
-    }
+      this.valor = "";
 
-    if(!(this.valor == "")){
-      this.variavel_valor.push(this.valor);
-      
-      this.soma = (Numero + adicao).toString();
     }
-    this.valor = "";
-    
 
   }
 
@@ -62,14 +57,12 @@ export class HomePage {
   })
   }
 
-  Remover(indice){
-    let Numero = parseInt(this.variavel_valor[indice])
-    let remocao = parseInt(this.soma);
+  
 
-    this.soma = (remocao - Numero).toString()
+  async Remover(indice){
 
-    this.variavel_lista.splice(indice, 1);
-    this.variavel_valor.splice(indice, 1);
+    await this.storage.remove(indice);
+    this.atualizaLista();
 
   }
 
