@@ -1,7 +1,0 @@
-{
-  "name": "Site_PI",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
